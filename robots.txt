@@ -1,0 +1,16 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /assets/
+Disallow: /img/
+Disallow: /js/
+Disallow: /css/
+Disallow: /links/
+
+Sitemap: http://www.noahxever.top/sitemap.xml
+Sitemap: http://www.noahxever.top/baidusitemap.xml
