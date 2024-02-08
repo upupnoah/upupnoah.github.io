@@ -164,6 +164,7 @@
 <li><a href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98">修改主题</a></li>
 <li><a href="#%E5%86%99%E4%B8%80%E7%AF%87-blog-%E7%9A%84%E6%B5%81%E7%A8%8B">写一篇 blog 的流程</a></li>
 <li><a href="#%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB-%E5%92%8C-%E6%A0%87%E7%AD%BE">添加分类 和 标签</a></li>
+<li><a href="#%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91">遇到的坑</a></li>
 </ul>
 </li>
 </ul>
@@ -221,6 +222,12 @@
 <li>修改 <code>blog/scaffolds/post.md</code> 文件, 添加 categories 和 tags 字段 (这是每次通过 hexo new 命令创建的文章模板) <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">categories:</span> []<br><span class="hljs-attr">tags:</span> []<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure></li>
 <li>每次写 blog 之前, 可以自行添加 categories 和 tags 字段<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span> [<span class="hljs-string">code</span>, <span class="hljs-string">健身</span>, <span class="hljs-string">生活</span>, <span class="hljs-string">娱乐</span>, <span class="hljs-string">game</span>, <span class="hljs-string">...</span>] <span class="hljs-string">(用逗号分隔,</span> <span class="hljs-string">可以添加多个分类)</span><br><span class="hljs-attr">tags:</span> [] <span class="hljs-string">(tag</span> <span class="hljs-string">同理)</span><br></code></pre></td></tr></table></figure></li>
 </ol>
+<h3 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h3><ul>
+<li>每推送一次就需要到 pages 中重新设置域名<ul>
+<li>解决方法: 在 <code>blog/source</code> 目录中新建一个 CNAME 文件, 在里面添加你的域名</li>
+</ul>
+</li>
+</ul>
 
       </section>
 
