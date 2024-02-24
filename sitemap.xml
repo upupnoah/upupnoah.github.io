@@ -83,6 +83,20 @@
 
   
   <url>
+    <loc>https://www.noahxever.top/tags/prompt/</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.noahxever.top/tags/gpt/</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.noahxever.top/tags/Hexo/</loc>
     <lastmod>2024-02-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -104,35 +118,7 @@
   </url>
   
   <url>
-    <loc>https://www.noahxever.top/tags/Data-Structure/</loc>
-    <lastmod>2024-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.noahxever.top/tags/api/</loc>
-    <lastmod>2024-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.noahxever.top/tags/prompt/</loc>
-    <lastmod>2024-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.noahxever.top/tags/gpt/</loc>
-    <lastmod>2024-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.noahxever.top/tags/static-site/</loc>
     <lastmod>2024-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -145,17 +131,31 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://www.noahxever.top/categories/Blog/</loc>
+    <loc>https://www.noahxever.top/tags/Data-Structure/</loc>
     <lastmod>2024-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.noahxever.top/categories/Algorithm/</loc>
+    <loc>https://www.noahxever.top/tags/static-site/</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://www.noahxever.top/categories/AI/</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.noahxever.top/categories/Blog/</loc>
     <lastmod>2024-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -169,14 +169,14 @@
   </url>
   
   <url>
-    <loc>https://www.noahxever.top/categories/AI/</loc>
+    <loc>https://www.noahxever.top/categories/Tools/</loc>
     <lastmod>2024-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.noahxever.top/categories/Tools/</loc>
+    <loc>https://www.noahxever.top/categories/Algorithm/</loc>
     <lastmod>2024-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
