@@ -24,7 +24,7 @@
 
   
 
-  <title>hexo-blog 搭建 | Noah&#39;s Blog</title>
+  <title>Self-use online tools | Noah&#39;s Blog</title>
 
   
 
@@ -105,32 +105,27 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">hexo-blog 搭建</h1>
+          <h1 class="title-wrap">Self-use online tools</h1>
           <h2 class="title-sub-wrap">
             <strong>Noah</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-02-08T21:18:33.000Z" itemprop="datePublished">2024-02-09</time>
+            <time  class="article-date" datetime="2024-02-24T14:28:35.000Z" itemprop="datePublished">2024-02-24</time>
           </h2>
           
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-02-24T14:56:34.883Z" itemprop="dateUpdated">2024-02-24</time>
-            </h2>
           
-          
-            <h2 id="/2024/02/09/hexo-blog-%E6%90%AD%E5%BB%BA/" class="title-sub-wrap leancloud_visitors" data-flag-title="hexo-blog 搭建">
+            <h2 id="/2024/02/24/Self-use-online-tools/" class="title-sub-wrap leancloud_visitors" data-flag-title="Self-use online tools">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
           
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/Blog/">📒 Blog</a></li>
+    <li><a href="/categories/Tools/">📒 Tools</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/Hexo/">🏷️ Hexo</a></li>
+    <li><a href="/tags/Online/">🏷️ Online</a></li>
   
 </ul>
         </div>
@@ -154,78 +149,18 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="hexo-blog-github-pages"><a href="#hexo-blog-github-pages" class="headerlink" title="hexo-blog &amp; github pages"></a>hexo-blog &amp; github pages</h1><!-- START doctoc generated TOC please keep comment here to allow auto update -->
+        <h1 id="Self-use-online-tools"><a href="#Self-use-online-tools" class="headerlink" title="Self-use online tools"></a>Self-use online tools</h1><!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<h2 id="所需环境"><a href="#所需环境" class="headerlink" title="所需环境"></a>所需环境</h2><ul>
-<li><a href="#%E6%89%80%E9%9C%80%E7%8E%AF%E5%A2%83">所需环境</a></li>
-<li><a href="#%E6%AD%A5%E9%AA%A4">步骤</a><ul>
-<li><a href="#%E5%88%9B%E5%BB%BA-github-repo">创建 github repo</a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE-git-%E5%B9%B6%E9%85%8D%E7%BD%AE-ssh">设置 git 并配置 ssh</a></li>
-<li><a href="#hexo">hexo</a></li>
-<li><a href="#%E5%B8%B8%E7%94%A8-hexo-%E5%91%BD%E4%BB%A4">常用 hexo 命令</a></li>
-<li><a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages">部署到 github pages</a></li>
-<li><a href="#%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%E5%8F%AF%E9%80%89">域名绑定(可选)</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98">修改主题</a></li>
-<li><a href="#%E5%86%99%E4%B8%80%E7%AF%87-blog-%E7%9A%84%E6%B5%81%E7%A8%8B">写一篇 blog 的流程</a></li>
-<li><a href="#%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB-%E5%92%8C-%E6%A0%87%E7%AD%BE">添加分类 和 标签</a></li>
-<li><a href="#%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91">遇到的坑</a></li>
-</ul>
-</li>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li><a href="#tools">Tools</a></li>
 </ul>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<h2 id="所需环境-1"><a href="#所需环境-1" class="headerlink" title="所需环境"></a>所需环境</h2><ol>
-<li>node.js</li>
-<li>git</li>
-<li>hexo-cli</li>
-</ol>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="创建-github-repo"><a href="#创建-github-repo" class="headerlink" title="创建 github repo"></a>创建 github repo</h3><p>仓库名: [github 用户名].github.io</p>
-<h3 id="设置-git-并配置-ssh"><a href="#设置-git-并配置-ssh" class="headerlink" title="设置 git 并配置 ssh"></a>设置 git 并配置 ssh</h3><ul>
-<li>下载并安装 git</li>
-<li>设置 git  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">git config --global user.name <span class="hljs-string">&quot;Your github username&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;Your github email&quot;</span><br></code></pre></td></tr></table></figure></li>
-<li>生成 ssh key  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ssh-keygen -t rsa -C <span class="hljs-string">&quot;Your github email&quot;</span><br></code></pre></td></tr></table></figure></li>
-<li>打开 <a target="_blank" rel="noopener" href="https://github.com/settings/keys">github SSH and GPG keys</a> 页面, 创建新的 SSH key, 并将 <code>~/.ssh/id_rsa.pub</code> 文件中的内容复制到 key 中</li>
-</ul>
-<h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><ul>
-<li>安装 hexo-cli  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install -g hexo-cli<br></code></pre></td></tr></table></figure></li>
-<li>初始化 hexo<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">mkdir</span> blog &amp;&amp; <span class="hljs-built_in">cd</span> blog<br>hexo init blog <span class="hljs-comment"># 会在当前目录下创建一个 blog 文件夹</span><br><span class="hljs-built_in">cd</span> blog<br>hexo new post test_my_site <span class="hljs-comment"># 创建一个新的文章</span><br>hexo g <span class="hljs-comment"># 生成静态文件</span><br>hexo s <span class="hljs-comment"># 启动本地服务</span><br></code></pre></td></tr></table></figure></li>
-<li>通过浏览器打开本地测试地址 <code>http://localhost:4000</code></li>
-</ul>
-<h3 id="常用-hexo-命令"><a href="#常用-hexo-命令" class="headerlink" title="常用 hexo 命令"></a>常用 hexo 命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install hexo -g <span class="hljs-comment">#安装Hexo</span><br>npm update hexo -g <span class="hljs-comment">#升级</span><br>hexo init <span class="hljs-comment">#初始化博客</span><br><br>hexo n <span class="hljs-string">&quot;我的博客&quot;</span> == hexo new <span class="hljs-string">&quot;我的博客&quot;</span> <span class="hljs-comment">#新建文章</span><br>hexo g == hexo generate <span class="hljs-comment">#生成</span><br>hexo s == hexo server <span class="hljs-comment">#启动服务预览</span><br>hexo d == hexo deploy <span class="hljs-comment">#部署</span><br><br>hexo server <span class="hljs-comment"># Hexo会监视文件变动并自动更新，无须重启服务器</span><br>hexo server -s <span class="hljs-comment"># 静态模式</span><br>hexo server -p 5000 <span class="hljs-comment"># 更改端口</span><br>hexo server -i 192.168.1.1 <span class="hljs-comment"># 自定义 IP</span><br>hexo clean <span class="hljs-comment"># 清除缓存，若是网页正常情况下可以忽略这条命令</span><br></code></pre></td></tr></table></figure>
-<h3 id="部署到-github-pages"><a href="#部署到-github-pages" class="headerlink" title="部署到 github pages"></a>部署到 github pages</h3><ul>
-<li>修改 <code>blog/_config.yml</code> 文件<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/xxx/xxx.github.io.git</span> <span class="hljs-comment"># xxx 为你的 github 用户名</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="域名绑定-可选"><a href="#域名绑定-可选" class="headerlink" title="域名绑定(可选)"></a>域名绑定(可选)</h3><ul>
-<li>如果不绑定域名, 可以通过: xxx.github.io 来访问 (xxx 为你的 github 用户名)</li>
-<li>购买一个域名(腾讯云, 阿里云, …)</li>
-<li>设置域名解析<ul>
-<li>添加一条 A 记录, 主机记录为 @, 记录值为 github pages 的 ip 地址 (通过 ping xxx.github.io 获取)</li>
-<li>添加一条 CNAME 记录, 主机记录为 www, 记录值为 xxx.github.io (xxx 为你的 github 用户名)</li>
-</ul>
-</li>
-<li>进入 github 仓库设置 -&gt; pages, 设置 Custom domain 为你的域名</li>
-<li>最后执行以下 3 连  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><ul>
-<li>下载主题, 访问 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo-theme</a></li>
-<li>进入主题的 github 仓库, git clone [url] themes&#x2F;xxx(主题名)</li>
-<li>修改 <code>blog/_config.yml</code> 文件, 找到 theme 字段, 修改为主题名  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">xxx(主题名)</span><br></code></pre></td></tr></table></figure></li>
-<li>若要自定义配置, 可参考各个主题的文档</li>
-</ul>
-<h3 id="写一篇-blog-的流程"><a href="#写一篇-blog-的流程" class="headerlink" title="写一篇 blog 的流程"></a>写一篇 blog 的流程</h3><ol>
-<li>进入 <code>blog</code> 目录</li>
-<li>执行 <code>hexo new post [文章名]</code> 创建一篇新文章</li>
-<li>编辑 <code>source/_posts/[文章名].md</code> 文件</li>
-<li>执行 <code>hexo g</code> 生成静态文件</li>
-<li>执行 <code>hexo s</code> 启动本地服务, 预览文章</li>
-<li>执行 <code>hexo d</code> 部署到 github pages</li>
-</ol>
-<h3 id="添加分类-和-标签"><a href="#添加分类-和-标签" class="headerlink" title="添加分类 和 标签"></a>添加分类 和 标签</h3><ol>
-<li>修改 <code>blog/scaffolds/post.md</code> 文件, 添加 categories 和 tags 字段 (这是每次通过 hexo new 命令创建的文章模板) <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">categories:</span> []<br><span class="hljs-attr">tags:</span> []<br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure></li>
-<li>每次写 blog 之前, 可以自行添加 categories 和 tags 字段<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span> [<span class="hljs-string">code</span>, <span class="hljs-string">健身</span>, <span class="hljs-string">生活</span>, <span class="hljs-string">娱乐</span>, <span class="hljs-string">game</span>, <span class="hljs-string">...</span>] <span class="hljs-string">(用逗号分隔,</span> <span class="hljs-string">可以添加多个分类)</span><br><span class="hljs-attr">tags:</span> [] <span class="hljs-string">(tag</span> <span class="hljs-string">同理)</span><br></code></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h3><ul>
-<li>每推送一次就需要到 pages 中重新设置域名<ul>
-<li>解决方法: 在 <code>blog/source</code> 目录中新建一个 CNAME 文件, 在里面添加你的域名</li>
+<h2 id="Tools-1"><a href="#Tools-1" class="headerlink" title="Tools"></a>Tools</h2><ul>
+<li><a href="#online-tools">Online tools</a><ul>
+<li><a href="%5B#image%5D(https://jinaconvert.com/cn/convert-to-ico.php)">Image to ico</a></li>
+<li><a href="%5B#video%5D(https://godbolt.org/)">Compiler Explorer</a></li>
+<li><a target="_blank" rel="noopener" href="https://excalidraw.com/">Excalidraw</a></li>
+<li><a target="_blank" rel="noopener" href="https://csacademy.com/app/graph_editor/">Graph Editor</a></li>
 </ul>
 </li>
 </ul>
@@ -236,20 +171,20 @@
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2024/02/09/hexo-blog-SEO-google/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">hexo-blog-SEO(google)</h2>
+        <a href="/2024/02/24/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%B7%A5%E5%85%B7-rinetd/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">端口转发工具 rinetd</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
