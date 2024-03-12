@@ -24,7 +24,7 @@
 
   
 
-  <title>端口转发工具 rinetd | Noah&#39;s Blog</title>
+  <title>Sui 相关概念 | Noah&#39;s Blog</title>
 
   
 
@@ -54,7 +54,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://cdn.seovx.com/d/?mom=302)"></div>
+    <div class="post-image" style="background-image: url(https://cdn.seovx.com/d/?mom=302&amp;id=)"></div>
   
 
   <!-- navbar -->
@@ -105,32 +105,23 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">端口转发工具 rinetd</h1>
+          <h1 class="title-wrap">Sui 相关概念</h1>
           <h2 class="title-sub-wrap">
             <strong>Noah</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-02-24T12:35:25.000Z" itemprop="datePublished">2024-02-24</time>
+            <time  class="article-date" datetime="2024-03-12T06:14:24.000Z" itemprop="datePublished">2024-03-12</time>
           </h2>
           
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-02-29T22:21:12.844Z" itemprop="dateUpdated">2024-03-01</time>
-            </h2>
           
-          
-            <h2 id="/2024/02/24/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%B7%A5%E5%85%B7-rinetd/" class="title-sub-wrap leancloud_visitors" data-flag-title="端口转发工具 rinetd">
+            <h2 id="/2024/03/12/Sui-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/" class="title-sub-wrap leancloud_visitors" data-flag-title="Sui 相关概念">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
           
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/Tools/">📒 Tools</a></li>
-  
 </ul>
           <ul class="wrap-list dark">
-  
-    <li><a href="/tags/Network/">🏷️ Network</a></li>
   
 </ul>
         </div>
@@ -154,22 +145,65 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="端口转发工具-rinetd"><a href="#端口转发工具-rinetd" class="headerlink" title="端口转发工具 rinetd"></a>端口转发工具 rinetd</h1><!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95">基本用法</a></li>
+        <h2 id="Sui-区块链"><a href="#Sui-区块链" class="headerlink" title="Sui 区块链"></a>Sui 区块链</h2><ul>
+<li>Sui 是 <a target="_blank" rel="noopener" href="https://www.techopedia.com/definition/layer-1-in-blockchain">Layer 1</a> 协议的区块链 → Sui 可以使用自己的原生代币(SUI)在网络上执行交易块的共识和验证</li>
 </ul>
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>需要先安装 homebrew (mac&#x2F;linux)  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">brew install rinetd<br></code></pre></td></tr></table></figure></li>
+<h2 id="SUI-代币-与-MIST-代币"><a href="#SUI-代币-与-MIST-代币" class="headerlink" title="SUI 代币 与 MIST 代币"></a>SUI 代币 与 MIST 代币</h2><ul>
+<li>SUI(全大写), 指的是 Sui 的原生代币</li>
+<li>在 Sui 上进行的交易通常只涉及小部分价值的 SUI, 因此为了简化交易过程和计算, Sui 引入了 MIST 作为更小单位的货币, 10 亿 MIST &#x3D; 1 Sui</li>
 </ul>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><ul>
-<li>配置文件: &#x2F;etc&#x2F;rinetd.conf<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/rinetd.conf<br></code></pre></td></tr></table></figure></li>
-<li>配置文件示例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs conf"># 本地地址    本地端口    目标地址          目标端口<br>0.0.0.0       8999       192.168.49.2      8999<br></code></pre></td></tr></table></figure></li>
-<li>执行端口转发<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">rinetd -c <span class="hljs-regexp">/etc/</span>rinetd.conf<br></code></pre></td></tr></table></figure></li>
-<li>查看端口转发状态<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">ps</span> -ef | <span class="hljs-keyword">grep</span> rinetd<br></code></pre></td></tr></table></figure></li>
-<li>停止端口转发<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">killall rinetd</span><br></code></pre></td></tr></table></figure></li>
+<h2 id="Gas"><a href="#Gas" class="headerlink" title="Gas"></a>Gas</h2><ul>
+<li>gas 指的是在区块链中的交易需要花费的代价</li>
+<li>使用区块链的原生代币支付 gas 和 数据存储成本 (SUI &#x2F; MIST)</li>
+</ul>
+<h2 id="委托权益证明共识-DPoS"><a href="#委托权益证明共识-DPoS" class="headerlink" title="委托权益证明共识 (DPoS)"></a>委托权益证明共识 (DPoS)</h2><ul>
+<li>Sui 使用 DPoS 共识机制来验证链上交易区块, 因此 Sui Network 上的验证者必须拥有一定的 SUI</li>
+<li>采用 DPoS机制, 被选出来验证交易的人（称为验证者）必须证明他们对于网络的安全有一定的贡献，通常是通过持有或锁定一定数量的SUI代币 (与 Sui 用户的利益一致)</li>
+</ul>
+<h2 id="Sui-网络"><a href="#Sui-网络" class="headerlink" title="Sui 网络"></a>Sui 网络</h2><ul>
+<li>Mainnet: 主网, 生产环境</li>
+<li>Testnet: 测试网络, 用于提供质量保证的暂存网络, 开发者可以在代码投入生产环境之前使用 Testnet 进行测试</li>
+<li>Devnet: 更不稳定的网络, 用于开发新功能, 开发者可以使用这个网络来开发 Sui 相关的程序</li>
+<li>Localnet: 可以在本地运行一个 Sui 网络</li>
+</ul>
+<p>Note: Devnet 数据可能会定期清除, Testnet 也会清除, 但会在清除前通知</p>
+<h2 id="Sui-Move-语言"><a href="#Sui-Move-语言" class="headerlink" title="Sui Move 语言"></a>Sui Move 语言</h2><ul>
+<li>Sui Move 语言为 Sui 上所有的活动提供代码逻辑, 例如交易 NFT、dApps 和其他基于交易的事件</li>
+<li>新的地方: 链上的区块是定义资产的 object, 而不仅仅是定义简单的 address kv存储</li>
+<li>2024 年有了新的语法</li>
+<li><a target="_blank" rel="noopener" href="https://docs.sui.io/concepts/sui-move-concepts">Move Concepts</a></li>
+</ul>
+<h2 id="Sui-Address"><a href="#Sui-Address" class="headerlink" title="Sui Address"></a>Sui Address</h2><blockquote>
+<p>Address 是唯一且匿名地表示一个在 Sui 上的用户</p>
+</blockquote>
+<ul>
+<li>在 Sui 中, 你可以有多个唯一的 Address</li>
+<li>获得 Sui address 的方式<ul>
+<li>方法 1: 安装 <a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/sui-wallet/opcgpfmipidbgpenhmajoajpbobppdil">Sui Wallet</a> (Chrome 插件), 在 Wallet(钱包) 中进行操作</li>
+<li>使用 sui client 命令: <code>sui client new-address ed25519</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Sui-Tokens"><a href="#Sui-Tokens" class="headerlink" title="Sui Tokens"></a>Sui Tokens</h2><blockquote>
+<p>使用 Sui faucet 免费获得测试 SUI tokens, 通过 SUI tokens 在 Sui 的 Devnet&#x2F;Testnet 网络中部署程序并交互</p>
+</blockquote>
+<ul>
+<li>Mainnet 没有 faucet</li>
+<li>需要先拥有 Address</li>
+</ul>
+<h3 id="获得-SUI-tokens"><a href="#获得-SUI-tokens" class="headerlink" title="获得 SUI tokens"></a>获得 SUI tokens</h3><ul>
+<li><p>方法 1: 通过 Discord 请求 test tokens (需要验证国外手机号)</p>
+<ul>
+<li>验证加入之后, 在#devnet-faucet 和 #testnet-faucet 频道中, 使用 <code>!faucet &lt;Your client address&gt;</code> 领取 test tokens</li>
+</ul>
+</li>
+<li><p>方法 2: 通过 Sui wallet 进行操作</p>
+</li>
+<li><p>方法 3: 通过 cURL</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl --location --request POST <span class="hljs-string">&#x27;https://faucet.devnet.sui.io/gas&#x27;</span> \<br>--header <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \<br>--data-raw <span class="hljs-string">&#x27;&#123;</span><br><span class="hljs-string">    &quot;FixedAmountRequest&quot;: &#123;</span><br><span class="hljs-string">        &quot;recipient&quot;: &quot;&lt;YOUR SUI ADDRESS&gt;&quot;</span><br><span class="hljs-string">    &#125;</span><br><span class="hljs-string">&#125;&#x27;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>还有一些方法, 具体可以看<a target="_blank" rel="noopener" href="https://docs.sui.io/guides/developer/getting-started/get-coins">官方文档</a></p>
+</li>
 </ul>
 
       </section>
@@ -181,10 +215,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
+      <div class="card-cover" background-image-lazy data-img="https://cdn.seovx.com/d/?mom=302&amp;id="></div>
+    
     <div class="card-text">
       
-        <a href="/2024/02/24/Self-use-online-tools/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Self-use online tools</h2>
+        <a href="/2024/03/12/Sui-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Sui 环境与常用工具</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -198,8 +234,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/02/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9E%8E%E6%89%AF-By%E8%8F%9C%E8%8F%9C%E5%9B%AD%E5%AD%90/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">数据结构瞎扯 By菜菜园子</h2>
+        <a href="/2024/02/24/Self-use-online-tools/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Self-use online tools</h2>
         </a>
       
       <div class="card-text--row">Older</div>

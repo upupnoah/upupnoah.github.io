@@ -6,7 +6,7 @@
   <link href="https://www.noahxever.top/atom.xml" rel="self"/>
   
   <link href="https://www.noahxever.top/"/>
-  <updated>2024-02-29T22:21:12.769Z</updated>
+  <updated>2024-03-12T06:15:02.080Z</updated>
   <id>https://www.noahxever.top/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sui 环境与常用工具</title>
+    <link href="https://www.noahxever.top/2024/03/12/Sui-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    <id>https://www.noahxever.top/2024/03/12/Sui-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</id>
+    <published>2024-03-12T06:14:58.000Z</published>
+    <updated>2024-03-12T06:15:02.080Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Sui-的开源工作流"><a href="#Sui-的开源工作流" class="headerlink" title="Sui 的开源工作流"></a>Sui 的开源工作流</h1><ul><li><p>Sui 使用的是 <strong>Fork 工作流</strong> (开源常用)</p><p>  !<a href="https://i.imgur.com/5OqGUjC.png">https://i.imgur.com/5OqGUjC.png</a></p></li><li><p>给 Sui 贡献代码需要先 <code>fork</code> <a href="https://github.com/MystenLabs/sui">Sui 代码库</a></p></li><li><p><code>git clone</code> 自己仓库下的副本代码库</p></li><li><p>修改代码</p></li><li><p><code>git add</code>, <code>git commit</code>, <code>git push</code>, 最后创建 pull request (PR)</p></li><li><p>仓库管理员进行 code review, 最后 merge 到 Sui 代码库</p></li></ul><h1 id="与-Sui-Network-交互的方式"><a href="#与-Sui-Network-交互的方式" class="headerlink" title="与 Sui Network 交互的方式"></a>与 Sui Network 交互的方式</h1><ul><li>官方 <a href="https://sdk.mystenlabs.com/typescript">Typescript SDK</a> 和 <a href="https://docs.sui.io/references/rust-sdk">Rust SDK</a></li><li><a href="https://docs.sui.io/references/cli/client">Sui CLI</a></li></ul><h1 id="Sui-CLI"><a href="#Sui-CLI" class="headerlink" title="Sui CLI"></a>Sui CLI</h1><blockquote><p>创建和管理私钥<br>创建示例NFT<br>调用和发布 Move modules</p></blockquote><h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2><h3 id="方式1-用-Homebrew-Mac-Linux"><a href="#方式1-用-Homebrew-Mac-Linux" class="headerlink" title="方式1: 用 Homebrew(Mac&#x2F;Linux)"></a>方式1: 用 Homebrew(Mac&#x2F;Linux)</h3><ul><li><code>brew install sui</code></li></ul><h3 id="方式2-从二进制安装-Windows-Mac-Linux"><a href="#方式2-从二进制安装-Windows-Mac-Linux" class="headerlink" title="方式2: 从二进制安装(Windows&#x2F;Mac&#x2F;Linux)"></a>方式2: 从二进制安装(Windows&#x2F;Mac&#x2F;Linux)</h3><ul><li>前往 <a href="https://github.com/MystenLabs/sui">Sui 代码库</a></li><li>找 Releases, 下载与你的操作系统相对应的.tgz压缩文件</li><li>解压文件</li><li>双击对应的二进制文件进行安装</li></ul><h3 id="方式3-从源代码安装-Windows-Mac-Linux"><a href="#方式3-从源代码安装-Windows-Mac-Linux" class="headerlink" title="方式3: 从源代码安装(Windows&#x2F;Mac&#x2F;Linux)"></a>方式3: 从源代码安装(Windows&#x2F;Mac&#x2F;Linux)</h3><ul><li>需要先安装 Rust 和 Cargo 环境<ul><li><code>curl --proto &#39;=https&#39; --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs/) | sh</code></li><li>后面需要升级 Rust 版本, 可以使用: <code>rustup update stable</code></li></ul></li><li><strong>Linux</strong> 系统需要先确保依赖已经安装<ul><li><code>sudo apt-get install curl git-all cmake gcc libssl-dev pkg-config libclang-dev libpq-dev build-essential</code></li></ul></li><li>安装 Sui 二进制文件 (时间有些长, 耐心等待)<ul><li><code>cargo install --locked --git https://github.com/MystenLabs/sui.git --branch testnet sui</code></li><li>安装的 Sui 二进制文件位于  <code>~/.cargo/bin</code> 下</li></ul></li></ul><h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p><code>sui --version</code> , 出现版本号即为安装成功</p><h1 id="Sui-CLI-常用命令"><a href="#Sui-CLI-常用命令" class="headerlink" title="Sui CLI 常用命令"></a>Sui CLI 常用命令</h1><ul><li>查看&#x2F;检查 可用环境别名(alias): <code>sui client envs</code></li><li>查看和钱包相关的 object：<code>sui client objects &lt;钱包地址&gt;</code></li><li>查看 gas：<code>sui client gas</code></li><li>添加新的 Sui 环境：<code>sui client new-env --alias mainnet --rpc https://fullnode.mainnet.sui.io:443</code></li><li>切换网络(active network)：<code>sui client switch --env &lt;network name&gt;</code></li><li>默认地址（未指定时）：<code>sui client active &lt;address&gt;</code></li><li>发布合约到 Sui 网络上：<code>sui client publish --gas-budget 100000000</code></li><li>…</li></ul><h1 id="区块链浏览器"><a href="#区块链浏览器" class="headerlink" title="区块链浏览器"></a>区块链浏览器</h1><blockquote><p>区块链浏览器用于查看和分析区块链数据的工具。它们提供了对区块链上的交易、区块和地址等信息的可视化和搜索功能</p></blockquote><ul><li><a href="https://suiexplorer.com/">Sui Explorer</a></li><li><a href="https://suivision.xyz/">SuiVision</a></li></ul><h1 id="使用-GraphQL-查询-Sui-RPC"><a href="#使用-GraphQL-查询-Sui-RPC" class="headerlink" title="使用 GraphQL 查询 Sui RPC"></a>使用 GraphQL 查询 Sui RPC</h1><ul><li>在线 IDE<ul><li><a href="https://sui-mainnet.mystenlabs.com/graphql">Sui Mainnet GraphQL</a></li><li><a href="https://sui-testnet.mystenlabs.com/graphql">Sui Testnet GraphQL</a></li></ul></li></ul><h1 id="持续更新常用工具-篇幅长的会新开一篇…"><a href="#持续更新常用工具-篇幅长的会新开一篇…" class="headerlink" title="持续更新常用工具, 篇幅长的会新开一篇…"></a>持续更新常用工具, 篇幅长的会新开一篇…</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Sui-的开源工作流&quot;&gt;&lt;a href=&quot;#Sui-的开源工作流&quot; class=&quot;headerlink&quot; title=&quot;Sui 的开源工作流&quot;&gt;&lt;/a&gt;Sui 的开源工作流&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Sui 使用的是 &lt;strong&gt;Fork 工作流&lt;/st</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sui 相关概念</title>
+    <link href="https://www.noahxever.top/2024/03/12/Sui-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/"/>
+    <id>https://www.noahxever.top/2024/03/12/Sui-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</id>
+    <published>2024-03-12T06:14:24.000Z</published>
+    <updated>2024-03-12T06:14:32.187Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Sui-区块链"><a href="#Sui-区块链" class="headerlink" title="Sui 区块链"></a>Sui 区块链</h2><ul><li>Sui 是 <a href="https://www.techopedia.com/definition/layer-1-in-blockchain">Layer 1</a> 协议的区块链 → Sui 可以使用自己的原生代币(SUI)在网络上执行交易块的共识和验证</li></ul><h2 id="SUI-代币-与-MIST-代币"><a href="#SUI-代币-与-MIST-代币" class="headerlink" title="SUI 代币 与 MIST 代币"></a>SUI 代币 与 MIST 代币</h2><ul><li>SUI(全大写), 指的是 Sui 的原生代币</li><li>在 Sui 上进行的交易通常只涉及小部分价值的 SUI, 因此为了简化交易过程和计算, Sui 引入了 MIST 作为更小单位的货币, 10 亿 MIST &#x3D; 1 Sui</li></ul><h2 id="Gas"><a href="#Gas" class="headerlink" title="Gas"></a>Gas</h2><ul><li>gas 指的是在区块链中的交易需要花费的代价</li><li>使用区块链的原生代币支付 gas 和 数据存储成本 (SUI &#x2F; MIST)</li></ul><h2 id="委托权益证明共识-DPoS"><a href="#委托权益证明共识-DPoS" class="headerlink" title="委托权益证明共识 (DPoS)"></a>委托权益证明共识 (DPoS)</h2><ul><li>Sui 使用 DPoS 共识机制来验证链上交易区块, 因此 Sui Network 上的验证者必须拥有一定的 SUI</li><li>采用 DPoS机制, 被选出来验证交易的人（称为验证者）必须证明他们对于网络的安全有一定的贡献，通常是通过持有或锁定一定数量的SUI代币 (与 Sui 用户的利益一致)</li></ul><h2 id="Sui-网络"><a href="#Sui-网络" class="headerlink" title="Sui 网络"></a>Sui 网络</h2><ul><li>Mainnet: 主网, 生产环境</li><li>Testnet: 测试网络, 用于提供质量保证的暂存网络, 开发者可以在代码投入生产环境之前使用 Testnet 进行测试</li><li>Devnet: 更不稳定的网络, 用于开发新功能, 开发者可以使用这个网络来开发 Sui 相关的程序</li><li>Localnet: 可以在本地运行一个 Sui 网络</li></ul><p>Note: Devnet 数据可能会定期清除, Testnet 也会清除, 但会在清除前通知</p><h2 id="Sui-Move-语言"><a href="#Sui-Move-语言" class="headerlink" title="Sui Move 语言"></a>Sui Move 语言</h2><ul><li>Sui Move 语言为 Sui 上所有的活动提供代码逻辑, 例如交易 NFT、dApps 和其他基于交易的事件</li><li>新的地方: 链上的区块是定义资产的 object, 而不仅仅是定义简单的 address kv存储</li><li>2024 年有了新的语法</li><li><a href="https://docs.sui.io/concepts/sui-move-concepts">Move Concepts</a></li></ul><h2 id="Sui-Address"><a href="#Sui-Address" class="headerlink" title="Sui Address"></a>Sui Address</h2><blockquote><p>Address 是唯一且匿名地表示一个在 Sui 上的用户</p></blockquote><ul><li>在 Sui 中, 你可以有多个唯一的 Address</li><li>获得 Sui address 的方式<ul><li>方法 1: 安装 <a href="https://chromewebstore.google.com/detail/sui-wallet/opcgpfmipidbgpenhmajoajpbobppdil">Sui Wallet</a> (Chrome 插件), 在 Wallet(钱包) 中进行操作</li><li>使用 sui client 命令: <code>sui client new-address ed25519</code></li></ul></li></ul><h2 id="Sui-Tokens"><a href="#Sui-Tokens" class="headerlink" title="Sui Tokens"></a>Sui Tokens</h2><blockquote><p>使用 Sui faucet 免费获得测试 SUI tokens, 通过 SUI tokens 在 Sui 的 Devnet&#x2F;Testnet 网络中部署程序并交互</p></blockquote><ul><li>Mainnet 没有 faucet</li><li>需要先拥有 Address</li></ul><h3 id="获得-SUI-tokens"><a href="#获得-SUI-tokens" class="headerlink" title="获得 SUI tokens"></a>获得 SUI tokens</h3><ul><li><p>方法 1: 通过 Discord 请求 test tokens (需要验证国外手机号)</p><ul><li>验证加入之后, 在#devnet-faucet 和 #testnet-faucet 频道中, 使用 <code>!faucet &lt;Your client address&gt;</code> 领取 test tokens</li></ul></li><li><p>方法 2: 通过 Sui wallet 进行操作</p></li><li><p>方法 3: 通过 cURL</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl --location --request POST <span class="hljs-string">&#x27;https://faucet.devnet.sui.io/gas&#x27;</span> \<br>--header <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \<br>--data-raw <span class="hljs-string">&#x27;&#123;</span><br><span class="hljs-string">    &quot;FixedAmountRequest&quot;: &#123;</span><br><span class="hljs-string">        &quot;recipient&quot;: &quot;&lt;YOUR SUI ADDRESS&gt;&quot;</span><br><span class="hljs-string">    &#125;</span><br><span class="hljs-string">&#125;&#x27;</span><br></code></pre></td></tr></table></figure></li><li><p>还有一些方法, 具体可以看<a href="https://docs.sui.io/guides/developer/getting-started/get-coins">官方文档</a></p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Sui-区块链&quot;&gt;&lt;a href=&quot;#Sui-区块链&quot; class=&quot;headerlink&quot; title=&quot;Sui 区块链&quot;&gt;&lt;/a&gt;Sui 区块链&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Sui 是 &lt;a href=&quot;https://www.techopedia.com/de</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Self-use online tools</title>
