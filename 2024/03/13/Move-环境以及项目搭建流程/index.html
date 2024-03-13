@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.1.1">
+
+  
+
+  
+    <meta name="keywords" content="Rust/Go">
+  
+
+  
+    <meta name="author" content="Noah">
+  
+
+  
+
+  
+
+  <title>Move 环境以及项目搭建流程 | Noah&#39;s Blog</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
+  
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="alternate" href="/atom.xml" title="Noah's Blog" type="application/atom+xml">
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://cdn.seovx.com/d/?mom=302&amp;id=)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Noah&#39;s Blog
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Move 环境以及项目搭建流程</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Noah</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-03-13T04:41:03.000Z" itemprop="datePublished">2024-03-13</time>
+          </h2>
+          
+          
+            <h2 id="/2024/03/13/Move-%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/" class="title-sub-wrap leancloud_visitors" data-flag-title="Move 环境以及项目搭建流程">
+              <em>文章访问量</em>
+              <i class="leancloud-visitors-count"></i>
+            </h2>
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="Move-环境以及项目搭建流程"><a href="#Move-环境以及项目搭建流程" class="headerlink" title="Move 环境以及项目搭建流程"></a>Move 环境以及项目搭建流程</h1><h2 id="Sui-VsCode-环境配置"><a href="#Sui-VsCode-环境配置" class="headerlink" title="Sui VsCode 环境配置"></a>Sui VsCode 环境配置</h2><ul>
+<li>安装 VsCode 后, 在扩展商店中下载 <code>move-analyzer</code> 插件</li>
+<li>安装 move-analyzer<ul>
+<li>git clone <a target="_blank" rel="noopener" href="https://github.com/MystenLabs/sui">Move存储库</a>并从源代码构建move-analyzer<ul>
+<li>需要先安装 Rust 和 Cargo 环境<ul>
+<li><code>curl --proto &#39;=https&#39; --tlsv1.2 -sSf [&lt;https://sh.rustup.rs&gt;](&lt;https://sh.rustup.rs/&gt;) | sh</code></li>
+<li>后面需要升级 Rust 版本, 可以使用: <code>rustup update stable</code></li>
+</ul>
+</li>
+<li><strong>Linux</strong> 系统需要先确保依赖已经安装<ul>
+<li><code>sudo apt-get install curl git-all cmake gcc libssl-dev pkg-config libclang-dev libpq-dev build-essential</code></li>
+</ul>
+</li>
+<li>安装 Sui 二进制文件 (时间有些长, 耐心等待)<ul>
+<li><code>cargo install --git https://github.com/move-language/move move-analyzer</code></li>
+<li>安装的二进制文件位于 <code>~/.cargo/bin</code> 下</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>目前插件还不完善, 代码提示和代码格式化比较弱</li>
+</ul>
+<h2 id="Sui-项目搭建"><a href="#Sui-项目搭建" class="headerlink" title="Sui 项目搭建"></a>Sui 项目搭建</h2><h3 id="创建-package"><a href="#创建-package" class="headerlink" title="创建 package"></a>创建 package</h3><ul>
+<li>执行: <code>sui move new my_first_package</code><ul>
+<li><p>目录结构如下, 包含一个 Move.toml 文件以及 sources 目录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">❯ tree my_first_package<br>my_first_package<br>├── Move.toml<br>└── sources<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>默认的 Move.toml 文件(随着 sui 的更新, 默认文件可能也会随之更新)</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash">❯ <span class="hljs-built_in">cat</span> my_first_package/Move.toml<br>[package]<br>name = <span class="hljs-string">&quot;my_first_package&quot;</span><br><br><span class="hljs-comment"># edition = &quot;2024.alpha&quot; # To use the Move 2024 edition, currently in alpha</span><br><span class="hljs-comment"># license = &quot;&quot;           # e.g., &quot;MIT&quot;, &quot;GPL&quot;, &quot;Apache 2.0&quot;</span><br><span class="hljs-comment"># authors = [&quot;...&quot;]      # e.g., [&quot;Joe Smith (joesmith@noemail.com)&quot;, &quot;John Snow (johnsnow@noemail.com)&quot;]</span><br><br>[dependencies]<br>Sui = &#123; git = <span class="hljs-string">&quot;https://github.com/MystenLabs/sui.git&quot;</span>, subdir = <span class="hljs-string">&quot;crates/sui-framework/packages/sui-framework&quot;</span>, rev = <span class="hljs-string">&quot;framework/testnet&quot;</span> &#125;<br><br><span class="hljs-comment"># For remote import, use the `&#123; git = &quot;...&quot;, subdir = &quot;...&quot;, rev = &quot;...&quot; &#125;`.</span><br><span class="hljs-comment"># Revision can be a branch, a tag, and a commit hash.</span><br><span class="hljs-comment"># MyRemotePackage = &#123; git = &quot;https://some.remote/host.git&quot;, subdir = &quot;remote/path&quot;, rev = &quot;main&quot; &#125;</span><br><br><span class="hljs-comment"># For local dependencies use `local = path`. Path is relative to the package root</span><br><span class="hljs-comment"># Local = &#123; local = &quot;../path/to&quot; &#125;</span><br><br><span class="hljs-comment"># To resolve a version conflict and force a specific version for dependency</span><br><span class="hljs-comment"># override use `override = true`</span><br><span class="hljs-comment"># Override = &#123; local = &quot;../conflicting/version&quot;, override = true &#125;</span><br><br>[addresses]<br>my_first_package = <span class="hljs-string">&quot;0x0&quot;</span><br><br><span class="hljs-comment"># Named addresses will be accessible in Move as `@name`. They&#x27;re also exported:</span><br><span class="hljs-comment"># for example, `std = &quot;0x1&quot;` is exported by the Standard Library.</span><br><span class="hljs-comment"># alice = &quot;0xA11CE&quot;</span><br><br>[dev-dependencies]<br><span class="hljs-comment"># The dev-dependencies section allows overriding dependencies for `--test` and</span><br><span class="hljs-comment"># `--dev` modes. You can introduce test-only dependencies here.</span><br><span class="hljs-comment"># Local = &#123; local = &quot;../path/to/dev-build&quot; &#125;</span><br><br>[dev-addresses]<br><span class="hljs-comment"># The dev-addresses section allows overwriting named addresses for the `--test`</span><br><span class="hljs-comment"># and `--dev` modes.</span><br><span class="hljs-comment"># alice = &quot;0xB0B&quot;</span><br><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="定义-module"><a href="#定义-module" class="headerlink" title="定义 module"></a>定义 module</h3><ul>
+<li><p>在 sources 目录下新建一个 move 文件: <code>touch my_first_package/sources/my_module.move</code></p>
+<ul>
+<li>内容如下( 现在不需要关心太多语法, 下一篇会实践语法)</li>
+</ul>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs bash">module my_first_package::my_module &#123;<br><br>    // Part 1: Imports<br>    use sui::object::&#123;Self, UID&#125;;<br>    use sui::transfer;<br>    use sui::tx_context::&#123;Self, TxContext&#125;;<br><br>    // Part 2: Struct definitions<br>    struct Sword has key, store &#123;<br>        <span class="hljs-built_in">id</span>: UID,<br>        magic: u64,<br>        strength: u64,<br>    &#125;<br><br>    struct Forge has key, store &#123;<br>        <span class="hljs-built_in">id</span>: UID,<br>        swords_created: u64,<br>    &#125;<br><br>    // Part 3: Module initializer to be executed when this module is published<br>    fun init(ctx: &amp;mut TxContext) &#123;<br>        <span class="hljs-built_in">let</span> admin = Forge &#123;<br>            <span class="hljs-built_in">id</span>: object::new(ctx),<br>            swords_created: 0,<br>        &#125;;<br>        // Transfer the forge object to the module/package publisher<br>        transfer::public_transfer(admin, tx_context::sender(ctx));<br>    &#125;<br><br>    // Part 4: Accessors required to <span class="hljs-built_in">read</span> the struct attributes<br>    public fun magic(self: &amp;Sword): u64 &#123;<br>        self.magic<br>    &#125;<br><br>    public fun strength(self: &amp;Sword): u64 &#123;<br>        self.strength<br>    &#125;<br><br>    public fun swords_created(self: &amp;Forge): u64 &#123;<br>        self.swords_created<br>    &#125;<br><br>    // Part 5: Public/entry <span class="hljs-built_in">functions</span> (introduced later <span class="hljs-keyword">in</span> the tutorial)<br><br>    // Part 6: Private <span class="hljs-built_in">functions</span> (<span class="hljs-keyword">if</span> any)<br><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Build-package"><a href="#Build-package" class="headerlink" title="Build package"></a>Build package</h3><ul>
+<li>执行: 在 my_first_package 目录的根目录下, 执行: <code>sui move build</code><ul>
+<li><p>成功 build 之后, 会在 console 打印出下方的内容:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">UPDATING GIT DEPENDENCY https://github.com/MystenLabs/sui.git<br>INCLUDING DEPENDENCY Sui<br>INCLUDING DEPENDENCY MoveStdlib<br>BUILDING my_first_package<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="测试-test-package"><a href="#测试-test-package" class="headerlink" title="测试(test) package"></a>测试(test) package</h3><ul>
+<li><p>使用 <code>#[test]</code> 声明是一个测试</p>
+</li>
+<li><p>在上方提供的代码的基础上, 添加下方的内容:</p>
+  <figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-meta">#[test]</span><br>public fun <span class="hljs-title function_ invoke__">test_sword_create</span>() &#123;<br>    <br>    <span class="hljs-comment">// Create a dummy TxContext for testing</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">ctx</span> = tx_context::<span class="hljs-title function_ invoke__">dummy</span>();<br>    <br>    <span class="hljs-comment">// Create a sword</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">sword</span> = Sword &#123;<br>        id: object::<span class="hljs-title function_ invoke__">new</span>(&amp;<span class="hljs-keyword">mut</span> ctx),<br>        magic: <span class="hljs-number">42</span>,<br>        strength: <span class="hljs-number">7</span>,<br>    &#125;;<br>    <br>    <span class="hljs-comment">// Check if accessor functions return correct values</span><br>    <span class="hljs-built_in">assert!</span>(<span class="hljs-title function_ invoke__">magic</span>(&amp;sword) == <span class="hljs-number">42</span> &amp;&amp; <span class="hljs-title function_ invoke__">strength</span>(&amp;sword) == <span class="hljs-number">7</span>, <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>使用 <code>sui move test</code> 命令执行带有 <code>#[test]</code>标记的函数</p>
+<ul>
+<li><p>测试成功的结果如下:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">BUILDING Sui<br>BUILDING MoveStdlib<br>BUILDING my_first_package<br>Running Move unit tests<br>Test result: OK. Total tests: 0; passed: 0; failed: 0<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>篇幅有限, 本文只是带领大家熟悉一遍流程, 更详细的操作参考官方文档: <a target="_blank" rel="noopener" href="https://docs.sui.io/guides/developer/first-app/build-test">https://docs.sui.io/guides/developer/first-app/build-test</a></p>
+</li>
+</ul>
+<h3 id="发布-publish-package"><a href="#发布-publish-package" class="headerlink" title="发布(publish) package"></a>发布(publish) package</h3><ul>
+<li>使用 <code>sui client publish</code> 命令发布一个 package</li>
+<li>使用 <code>sui client call</code> 命令调用 package 中的功能</li>
+</ul>
+<h3 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h3><ul>
+<li>由于 Move 目前还没有调试器, 因此使用 <code>std::debug</code> 模块进行调试</li>
+<li>常用操作:<ul>
+<li><code>use std::debug;</code> : 导入调试模块</li>
+<li><code>debug::print(&amp;v);</code></li>
+<li><code>debug::print(v);</code> : 在 v 已经是引用的情况下, 直接传入 v</li>
+<li><code>debug::print_stack_trace();</code> : 打印当前堆栈跟踪</li>
+</ul>
+</li>
+</ul>
+<h3 id="客户端应用程序"><a href="#客户端应用程序" class="headerlink" title="客户端应用程序"></a>客户端应用程序</h3><blockquote>
+<p>例如连接钱包, 使用 Sui RPC 查询数据</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sdk.mystenlabs.com/typescript">TypeScript SDK</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.sui.io/references/rust-sdk">Rust SDK</a></li>
+</ul>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><code class="hljs rust">module my_first_package::my_module &#123;<br><br>    <span class="hljs-comment">// Part 1: Imports</span><br>    <span class="hljs-keyword">use</span> sui::object::&#123;<span class="hljs-keyword">Self</span>, UID&#125;;<br>    <span class="hljs-keyword">use</span> sui::transfer;<br>    <span class="hljs-keyword">use</span> sui::tx_context::&#123;<span class="hljs-keyword">Self</span>, TxContext&#125;;<br>    <span class="hljs-comment">// Part 2: Struct definitions</span><br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Sword</span> has key, store&#123;<br>        id: UID,<br>        magic: <span class="hljs-type">u64</span>,<br>        strength: <span class="hljs-type">u64</span>,<br>    &#125;<br><br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Forge</span> has key, store &#123;<br>        id: UID,<br>        swords_created: <span class="hljs-type">u64</span>,<br>    &#125;<br><br>    <span class="hljs-comment">// Part 3: Module initializer to be executed when this module is published</span><br>    fun <span class="hljs-title function_ invoke__">init</span>(ctx: &amp;<span class="hljs-keyword">mut</span> TxContext) &#123;<br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">admin</span> = Forge &#123;<br>            id: object::<span class="hljs-title function_ invoke__">new</span>(ctx),<br>            swords_created: <span class="hljs-number">0</span>,<br>        &#125;;<br>        <span class="hljs-comment">// Transfer the forge object to the module/package publisher</span><br>        transfer::<span class="hljs-title function_ invoke__">public_transfer</span>(admin, tx_context::<span class="hljs-title function_ invoke__">sender</span>(ctx));<br>    &#125;<br><br>    <span class="hljs-comment">// Part 4: Accessors required to read the struct attributes</span><br>    public fun <span class="hljs-title function_ invoke__">magic</span>(<span class="hljs-keyword">self</span>: &amp;Sword): <span class="hljs-type">u64</span> &#123;<br>        <span class="hljs-keyword">self</span>.magic<br>    &#125;<br><br>    public fun <span class="hljs-title function_ invoke__">strength</span>(<span class="hljs-keyword">self</span>: &amp;Sword): <span class="hljs-type">u64</span> &#123;<br>        <span class="hljs-keyword">self</span>.strength<br>    &#125;<br><br>    public fun <span class="hljs-title function_ invoke__">swords_created</span>(<span class="hljs-keyword">self</span>: &amp;Forge): <span class="hljs-type">u64</span> &#123;<br>        <span class="hljs-keyword">self</span>.swords_created<br>    &#125;<br>    public fun <span class="hljs-title function_ invoke__">sword_create</span>(magic: <span class="hljs-type">u64</span>, strength: <span class="hljs-type">u64</span>, recipient: address, ctx: &amp;<span class="hljs-keyword">mut</span> TxContext) &#123;<br>        <span class="hljs-keyword">use</span> sui::transfer;<br><br>        <span class="hljs-comment">// create a sword</span><br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">sword</span> = Sword &#123;<br>            id: object::<span class="hljs-title function_ invoke__">new</span>(ctx),<br>            magic: magic,<br>            strength: strength,<br>        &#125;;<br>        <span class="hljs-comment">// transfer the sword</span><br>        transfer::<span class="hljs-title function_ invoke__">transfer</span>(sword, recipient);<br>    &#125;<br>    public fun <span class="hljs-title function_ invoke__">sword_transfer</span>(sword: Sword, recipient: address, _ctx: &amp;<span class="hljs-keyword">mut</span> TxContext) &#123;<br>        <span class="hljs-keyword">use</span> sui::transfer;<br>        <span class="hljs-comment">// transfer the sword</span><br>        transfer::<span class="hljs-title function_ invoke__">transfer</span>(sword, recipient);<br>    &#125;<br><br>    public fun <span class="hljs-title function_ invoke__">new_sword</span> (<br>            forge: &amp;<span class="hljs-keyword">mut</span> Forge,<br>            magic: <span class="hljs-type">u64</span>,<br>            strength: <span class="hljs-type">u64</span>,<br>            ctx: &amp;<span class="hljs-keyword">mut</span> TxContext,<br>        ): Sword &#123;<br>            forge.swords_created = forge.swords_created + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">let</span> <span class="hljs-variable">sword</span> = Sword &#123;<br>                id: object::<span class="hljs-title function_ invoke__">new</span>(ctx),<br>                magic: magic,<br>                strength: strength,<br>            &#125;;<br>            sword<br>        &#125;<br><br>    <span class="hljs-comment">// Part 5: Public/entry functions (introduced later in the tutorial)</span><br><br>    <span class="hljs-comment">// Part 6: Private functions (if any)</span><br><br>    <span class="hljs-meta">#[test]</span><br>    public fun <span class="hljs-title function_ invoke__">test_sword_create</span>() &#123;<br>        <span class="hljs-keyword">use</span> sui::transfer;<br><br>        <span class="hljs-comment">// Create a dummy TxContext for testing</span><br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">ctx</span> = tx_context::<span class="hljs-title function_ invoke__">dummy</span>();<br><br>        <span class="hljs-comment">// Create a sword</span><br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">sword</span> = Sword &#123;<br>            id: object::<span class="hljs-title function_ invoke__">new</span>(&amp;<span class="hljs-keyword">mut</span> ctx),<br>            magic: <span class="hljs-number">42</span>,<br>            strength: <span class="hljs-number">7</span>,<br>        &#125;;<br><br>        <span class="hljs-comment">// Check if accessor functions return correct values</span><br>        <span class="hljs-built_in">assert!</span>(<span class="hljs-title function_ invoke__">magic</span>(&amp;sword) == <span class="hljs-number">42</span> &amp;&amp; <span class="hljs-title function_ invoke__">strength</span>(&amp;sword) == <span class="hljs-number">7</span>, <span class="hljs-number">1</span>);<br><br>        <span class="hljs-comment">// Create a dummy address and transfer the sword</span><br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">dummy_address</span> = @<span class="hljs-number">0xCAFE</span>;<br>        transfer::<span class="hljs-title function_ invoke__">transfer</span>(sword, dummy_address);<br>    &#125;<br><br>    <span class="hljs-meta">#[test]</span><br>    fun <span class="hljs-title function_ invoke__">test_sword_transactions</span>() &#123;<br>        <span class="hljs-keyword">use</span> sui::test_scenario;<br><br>        <span class="hljs-comment">// create test addresses representing users</span><br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">admin</span> = @<span class="hljs-number">0xBABE</span>;<br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">initial_owner</span> = @<span class="hljs-number">0xCAFE</span>;<br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">final_owner</span> = @<span class="hljs-number">0xFACE</span>;<br><br>        <span class="hljs-comment">// first transaction to emulate module initialization</span><br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">scenario_val</span> = test_scenario::<span class="hljs-title function_ invoke__">begin</span>(admin);<br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">scenario</span> = &amp;<span class="hljs-keyword">mut</span> scenario_val;<br>        &#123;<br>            <span class="hljs-title function_ invoke__">init</span>(test_scenario::<span class="hljs-title function_ invoke__">ctx</span>(scenario));<br>        &#125;;<br>        <span class="hljs-comment">// second transaction executed by admin to create the sword</span><br>        test_scenario::<span class="hljs-title function_ invoke__">next_tx</span>(scenario, admin);<br>        &#123;<br>            <span class="hljs-comment">// create the sword and transfer it to the initial owner</span><br>            <span class="hljs-title function_ invoke__">sword_create</span>(<span class="hljs-number">42</span>, <span class="hljs-number">7</span>, initial_owner, test_scenario::<span class="hljs-title function_ invoke__">ctx</span>(scenario));<br>        &#125;;<br>        <span class="hljs-comment">// third transaction executed by the initial sword owner</span><br>        test_scenario::<span class="hljs-title function_ invoke__">next_tx</span>(scenario, initial_owner);<br>        &#123;<br>            <span class="hljs-comment">// extract the sword owned by the initial owner</span><br>            <span class="hljs-keyword">let</span> <span class="hljs-variable">sword</span> = test_scenario::take_from_sender&lt;Sword&gt;(scenario);<br>            <span class="hljs-comment">// transfer the sword to the final owner</span><br>            <span class="hljs-title function_ invoke__">sword_transfer</span>(sword, final_owner, test_scenario::<span class="hljs-title function_ invoke__">ctx</span>(scenario))<br>        &#125;;<br>        <span class="hljs-comment">// fourth transaction executed by the final sword owner</span><br>        test_scenario::<span class="hljs-title function_ invoke__">next_tx</span>(scenario, final_owner);<br>        &#123;<br>            <span class="hljs-comment">// extract the sword owned by the final owner</span><br>            <span class="hljs-keyword">let</span> <span class="hljs-variable">sword</span> = test_scenario::take_from_sender&lt;Sword&gt;(scenario);<br>            <span class="hljs-comment">// verify that the sword has expected properties</span><br>            <span class="hljs-built_in">assert!</span>(<span class="hljs-title function_ invoke__">magic</span>(&amp;sword) == <span class="hljs-number">42</span> &amp;&amp; <span class="hljs-title function_ invoke__">strength</span>(&amp;sword) == <span class="hljs-number">7</span>, <span class="hljs-number">1</span>);<br>            <span class="hljs-comment">// return the sword to the object pool</span><br>            test_scenario::<span class="hljs-title function_ invoke__">return_to_sender</span>(scenario, sword)<br>            <span class="hljs-comment">// or uncomment the line below to destroy the sword instead</span><br>            <span class="hljs-comment">// test_utils::destroy(sword)</span><br>        &#125;;<br>        test_scenario::<span class="hljs-title function_ invoke__">end</span>(scenario_val);<br>    &#125;<br><br>    <span class="hljs-meta">#[test_only]</span> <span class="hljs-keyword">use</span> sui::test_scenario <span class="hljs-keyword">as</span> ts;<br>    <span class="hljs-meta">#[test_only]</span> <span class="hljs-keyword">const</span> ADMIN: address = @<span class="hljs-number">0xAD</span>;<br><br>    <span class="hljs-meta">#[test]</span><br>    public fun <span class="hljs-title function_ invoke__">test_module_init</span>() &#123;<br>        <span class="hljs-keyword">let</span> <span class="hljs-variable">ts</span> = ts::<span class="hljs-title function_ invoke__">begin</span>(@<span class="hljs-number">0x0</span>);<br><br>        <span class="hljs-comment">// first transaction to emulate module initialization.</span><br>        &#123;<br>            ts::<span class="hljs-title function_ invoke__">next_tx</span>(&amp;<span class="hljs-keyword">mut</span> ts, ADMIN);<br>            <span class="hljs-title function_ invoke__">init</span>(ts::<span class="hljs-title function_ invoke__">ctx</span>(&amp;<span class="hljs-keyword">mut</span> ts));<br>        &#125;;<br><br>        <span class="hljs-comment">// second transaction to check if the forge has been created</span><br>        <span class="hljs-comment">// and has initial value of zero swords created</span><br>        &#123;<br>            ts::<span class="hljs-title function_ invoke__">next_tx</span>(&amp;<span class="hljs-keyword">mut</span> ts, ADMIN);<br><br>            <span class="hljs-comment">// extract the Forge object</span><br>            <span class="hljs-keyword">let</span> <span class="hljs-variable">forge</span>: Forge = ts::<span class="hljs-title function_ invoke__">take_from_sender</span>(&amp;<span class="hljs-keyword">mut</span> ts);<br><br>            <span class="hljs-comment">// verify number of created swords</span><br>            <span class="hljs-built_in">assert!</span>(<span class="hljs-title function_ invoke__">swords_created</span>(&amp;forge) == <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);<br><br>            <span class="hljs-comment">// return the Forge object to the object pool</span><br>            ts::<span class="hljs-title function_ invoke__">return_to_sender</span>(&amp;<span class="hljs-keyword">mut</span> ts, forge);<br>        &#125;;<br>        ts::<span class="hljs-title function_ invoke__">end</span>(ts);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/03/12/Sui-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Sui 环境与常用工具</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//unpkg.com/leancloud-storage@3.15.0/dist/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "RtG4xz6VjpcXALVRHJgUzeYv-gzGzoHsz",
+        appKey: "AAyeO1OyD5tUhy4URXnUFRAl",
+        placeholder: "随便说点什么叭～",
+        avatar: "mp",
+        pageSize: 10,
+        lang: "zh-cn",
+        visitor: true,
+        recordIP: true,
+        enableQQ: false,
+        meta: ['nick', 'mail', 'link'],
+        requiredFields: ['nick'],
+        
+        // Bilibili 表情包插件
+        // 设置 Bilibili 表情包地址
+        emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+        // 表情 title 和图片映射
+        emojiMaps: {
+            // 小黄脸
+            "2023": "fa6dda8b876ed38609de38aa604be5ad109b8591.png",
+            "足球": "f9157d9fa5ac3b8339cb8a8b7ad70eb40d4113c9.png",
+            "脱单doge": "bf7e00ecab02171f8461ee8cf439c73db9797748.png",
+            "微笑": "685612eadc33f6bc233776c6241813385844f182.png",
+            "口罩": "3ad2f66b151496d2a5fb0a8ea75f32265d778dd3.png",
+            "doge": "3087d273a78ccaff4bb1e9972e2ba2a7583c9f11.png",
+            "妙啊": "b4cb77159d58614a9b787b91b1cd22a81f383535.png",
+            "OK": "4683fd9ffc925fa6423110979d7dcac5eda297f4.png",
+            "星星眼": "63c9d1a31c0da745b61cdb35e0ecb28635675db2.png",
+            "辣眼睛": "35d62c496d1e4ea9e091243fa812866f5fecc101.png",
+            "吃瓜": "4191ce3c44c2b3df8fd97c33f85d3ab15f4f3c84.png",
+            "滑稽": "d15121545a99ac46774f1f4465b895fe2d1411c3.png",
+            "呲牙": "b5a5898491944a4268360f2e7a84623149672eb6.png",
+            "打call": "431432c43da3ee5aab5b0e4f8931953e649e9975.png",
+            "歪嘴": "4384050fbab0586259acdd170b510fe262f08a17.png",
+            "调皮": "8290b7308325e3179d2154327c85640af1528617.png",
+            "2022": "a783df2ce72952c44004007462324bde4b092a0c.png",
+            "虎年": "a062f5fa2bafe677e49b6963a2bbb11dd4fe1e11.png",
+            "豹富": "3d1dbe52ea16e12ff7b1c371196f728a4097fb33.png",
+            "嗑瓜子": "28a91da1685d90124cfeead74622e1ebb417c0eb.png",
+            "笑哭": "c3043ba94babf824dea03ce500d0e73763bf4f40.png",
+            "藏狐": "ba0937ef6f3ccca85e2e0047e6263f3b4da37201.png",
+            "脸红": "0922c375da40e6b69002bd89b858572f424dcfca.png",
+            "给心心": "1597302b98827463f5b75c7cac1f29ea6ce572c4.png",
+            "嘟嘟": "abd7404537d8162720ccbba9e0a8cdf75547e07a.png",
+            "哦呼": "362bded07ea5434886271d23fa25f5d85d8af06c.png",
+            "喜欢": "8a10a4d73a89f665feff3d46ca56e83dc68f9eb8.png",
+            "酸了": "92b1c8cbceea3ae0e8e32253ea414783e8ba7806.png",
+            "嫌弃": "de4c0783aaa60ec03de0a2b90858927bfad7154b.png",
+            "大哭": "2caafee2e5db4db72104650d87810cc2c123fc86.png",
+            "害羞": "9d2ec4e1fbd6cb1b4d12d2bbbdd124ccb83ddfda.png",
+            "疑惑": "b7840db4b1f9f4726b7cb23c0972720c1698d661.png",
+            "喜极而泣": "485a7e0c01c2d70707daae53bee4a9e2e31ef1ed.png",
+            "奸笑": "bb84906573472f0a84cebad1e9000eb6164a6f5a.png",
+            "笑": "81edf17314cea3b48674312b4364df44d5c01f17.png",
+            "偷笑": "6c49d226e76c42cd8002abc47b3112bc5a92f66a.png",
+            "惊讶": "f8e9a59cad52ae1a19622805696a35f0a0d853f3.png",
+            "捂脸": "6921bb43f0c634870b92f4a8ad41dada94a5296d.png",
+            "阴险": "ba8d5f8e7d136d59aab52c40fd3b8a43419eb03c.png",
+            "囧": "12e41d357a9807cc80ef1e1ed258127fcc791424.png",
+            "呆": "33ad6000d9f9f168a0976bc60937786f239e5d8c.png",
+            "抠鼻": "cb89184c97e3f6d50acfd7961c313ce50360d70f.png",
+            "大笑": "ca94ad1c7e6dac895eb5b33b7836b634c614d1c0.png",
+            "惊喜": "0afecaf3a3499479af946f29749e1a6c285b6f65.png",
+            "无语": "44667b7d9349957e903b1b62cb91fb9b13720f04.png",
+            "点赞": "1a67265993913f4c35d15a6028a30724e83e7d35.png",
+            "鼓掌": "895d1fc616b4b6c830cf96012880818c0e1de00d.png",
+            "尴尬": "cb321684ed5ce6eacdc2699092ab8fe7679e4fda.png",
+            "灵魂出窍": "43d3db7d97343c01b47e22cfabeca84b4251f35a.png",
+            "委屈": "d2f26cbdd6c96960320af03f5514c5b524990840.png",
+            "傲娇": "010540d0f61220a0db4922e4a679a1d8eca94f4e.png",
+            "疼": "905fd9a99ec316e353b9bd4ecd49a5f0a301eabf.png",
+            "冷": "cb0ebbd0668640f07ebfc0e03f7a18a8cd00b4ed.png",
+            "热": "4e58a2a6f5f1580ac33df2d2cf7ecad7d9ab3635.png",
+            "生病": "0f25ce04ae1d7baf98650986454c634f6612cb76.png",
+            "吓": "9c10c5ebc7bef27ec641b8a1877674e0c65fea5d.png",
+            "吐": "06946bfe71ac48a6078a0b662181bb5cad09decc.png",
+            "捂眼": "c5c6d6982e1e53e478daae554b239f2b227b172b.png",
+            "嘘声": "e64af664d20716e090f10411496998095f62f844.png",
+            "思考": "cfa9b7e89e4bfe04bbcd34ccb1b0df37f4fa905c.png",
+            "再见": "fc510306bae26c9aec7e287cdf201ded27b065b9.png",
+            "翻白眼": "eba54707c7168925b18f6f8b1f48d532fe08c2b1.png",
+            "哈欠": "888d877729cbec444ddbd1cf4c9af155a7a06086.png",
+            "奋斗": "bb2060c15dba7d3fd731c35079d1617f1afe3376.png",
+            "墨镜": "3a03aebfc06339d86a68c2d893303b46f4b85771.png",
+            "难过": "a651db36701610aa70a781fa98c07c9789b11543.png",
+            "撇嘴": "531863568e5668c5ac181d395508a0eeb1f0cda4.png",
+            "抓狂": "4c87afff88c22439c45b79e9d2035d21d5622eba.png",
+            "生气": "3195714219c4b582a4fb02033dd1519913d0246d.png",
+            "水稻": "d530fcaa5100ba12a17a79b55bad342d530c54e3.png",
+            "奶茶干杯": "d5a491990be551ce69f9660da948050df4eab331.png",
+            "汤圆": "93609633a9d194cf336687eb19c01dca95bde719.png",
+            "锦鲤": "643d6c19c8164ffd89e3e9cdf093cf5d773d979c.png",
+            "弹幕破百亿": "80891223ba023dff3141e377f4ea3b89918eb6a4.png",
+            "福到了": "5de5373d354c373cf1617b6b836f3a8d53c5a655.png",
+            "鸡腿": "c7860392815d345fa69c4f00ef18d67dccfbd574.png",
+            "雪花": "a41813c4edf8782047e172c884ebd4507ce5e449.png",
+            "视频卫星": "dce6fc7d6dfeafff01241924db60f8251cca5307.png",
+            "干杯": "8da12d5f55a2c7e9778dcc05b40571979fe208e6.png",
+            "黑洞": "e90ec4c799010f25391179118ccd9f66b3b279ba.png",
+            "爱心": "ed04066ea7124106d17ffcaf75600700e5442f5c.png",
+            "胜利": "b49fa9f4b1e7c3477918153b82c60b114d87347c.png",
+            "加油": "c7aaeacb21e107292d3bb053e5abde4a4459ed30.png",
+            "抱拳": "89516218158dbea18ab78e8873060bf95d33bbbe.png",
+            "响指": "1b5c53cf14336903e1d2ae3527ca380a1256a077.png",
+            "保佑": "fafe8d3de0dc139ebe995491d2dac458a865fb30.png",
+            "福": "802429a301ac5b35a0480d9526a070ce67cd8097.png",
+            "支持": "3c210366a5585706c09d4c686a9d942b39feeb50.png",
+            "拥抱": "41780a4254750cdaaccb20735730a36044e98ef3.png",
+            "跪了": "f2b3aee7e521de7799d4e3aa379b01be032698ac.png",
+            "怪我咯": "07cc6077f7f7d75b8d2c722dd9d9828a9fb9e46d.png",
+            "老鼠": "8e6fb491eb1bb0d5862e7ec8ccf9a3da12b6c155.png",
+            "牛年": "9275275ff1f2659310648221107d20bc4970f106.png",
+            "三星堆": "fc7dadaa6986e75b813aa26f3eff3281d5f1a6d1.png",
+            "洛天依": "9fe06f3594d9afaf4ee2b74770f1c3086ae0ba11.png",
+            "坎公骑冠剑_吃鸡": "c4248a7b6ab326d66c83fd1fb58f1a50f99df332.png",
+            "坎公骑冠剑_钻石": "0b97c7e50e0cc963370e62fbb9b55f51bbe7f8ab.png",
+            "坎公骑冠剑_无语": "80eba0ce64c3fc1279b4daede2f1979cb2380e78.png",
+            "来古-沉思": "4ee07ff03266d62b246be0b950bebb2abf3d997c.png",
+            "来古-呆滞": "9a70b365e523f2379f395031ceefcebb75a45903.png",
+            "来古-疑问": "032fdc0d9d9fe6334776f6c39518a959b73b98f4.png",
+            "来古-震撼": "8b40f228675602a317d32007de6b795c101135ec.png",
+            "来古-注意": "4b671ba32a2581cf40e5cd41c67b111eb8010de0.png",
+            "初音未来_大笑": "8e7f71cda83ce407b0684702983399f8ed982f17.png",
+            "原神_哇": "8188ddf95bace929d382c7a83214afde79d83bfc.png",
+            "原神_哼": "91ed33b74bc36873c3ac8b2648f70d7ab6d8ab78.png",
+            "原神_嗯": "8b0a87e414f453a29730b6e0f45ca61f2f898688.png",
+            "原神_欸嘿": "8fba438fcbe0550877b04efd768d857082307c5e.png",
+            "原神_喝茶": "1de5789fbb3526ef7823c54db7081790a38e7044.png",
+            "原神_生气": "90a38c34742899f8e84138ed55f56cad3ba611fb.png",
+            "保卫萝卜_白眼": "9fce63f38288700bf7be84f3be336cf895ba0902.png",
+            "保卫萝卜_笔芯": "5ff2ed5cb71b02010018cc5910ac7052a03769af.png",
+            "保卫萝卜_哭哭": "7d249f7c990111d3e2982f7477af15b7eb29cbd9.png",
+            "保卫萝卜_哇": "5f2370e561c32d841245f7b1aab2eef43aeb9544.png",
+            "保卫萝卜_问号": "41eb93f09fc4a4d0692a310e8a1f85ba60e96060.png",
+            "无悔华夏_不愧是你": "c58002c32ee78d45366e126f294cb3149dd64ac2.png",
+            "无悔华夏_吃瓜": "273dcff577551bafff4f1eae18561f871e73a6ba.png",
+            "无悔华夏_达咩": "cffab383f47bab7f6736ba9c8d6ac098113410d9.png",
+            "无悔华夏_点赞": "b0f2e8db405ec667c3e6aaabd7c15155b6ea8710.png",
+            "无悔华夏_好耶": "324cd79784aeb37dbf2f47f68bbe8ed5d01f975e.png",
+            "奥比岛_搬砖": "1fab697214918d91087373a999cc7ef8040ddf85.png",
+            "奥比岛_点赞": "fb0b476fe2ff30cd59385ea7d616627ac114161f.png",
+            "奥比岛_击爪": "35bba1bb8f164c5e844155548438248e6eaa8382.png",
+            "奥比岛_委屈": "fda155e7c33b40dbb94c24644e0635d47b6ef3cc.png",
+            "奥比岛_喜欢": "ed64e0c81ee194138bd9df30c65077ed978fb88c.png",
+            // tv_小电视
+            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
+            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+            // ... 更多表情
+        }
+        
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://i.imgur.com/gJWRxmK.jpg" class="soft-size--round soft-style--box" alt="Noah">
+    
+    
+      <h2>Noah</h2>
+    
+    
+      <p>Like fleeting fireworks, all fades. I must strive harder. Miracles and magic exist... Time, slow down. As for me, move faster.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>11</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        6
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        11
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>Hello!</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Tools/">
+            Tools (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Blockchain/">
+            Blockchain (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Blog/">
+            Blog (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Share/">
+            Share (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/Algorithm/">
+            Algorithm (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/AI/">
+            AI (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/Data-Structure/" style="font-size: 10px;" class="tags-cloud-0">Data Structure</a> <a href="/tags/Hexo/" style="font-size: 20px;" class="tags-cloud-10">Hexo</a> <a href="/tags/Network/" style="font-size: 10px;" class="tags-cloud-0">Network</a> <a href="/tags/Online/" style="font-size: 10px;" class="tags-cloud-0">Online</a> <a href="/tags/SEO/" style="font-size: 10px;" class="tags-cloud-0">SEO</a> <a href="/tags/Sui/" style="font-size: 20px;" class="tags-cloud-10">Sui</a> <a href="/tags/api/" style="font-size: 10px;" class="tags-cloud-0">api</a> <a href="/tags/gpt/" style="font-size: 10px;" class="tags-cloud-0">gpt</a> <a href="/tags/prompt/" style="font-size: 10px;" class="tags-cloud-0">prompt</a> <a href="/tags/static-site/" style="font-size: 10px;" class="tags-cloud-0">static-site</a> <a href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" style="font-size: 10px;" class="tags-cloud-0">搜索引擎</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/upupnoah/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://twitter.com/upupnoah" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">Noah</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 Light</a>
+      <a href="javascript:;" id="theme-dark">🌛 Dark</a>
+      <a href="javascript:;" id="theme-auto">🤖️ Auto</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
