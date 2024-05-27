@@ -6,7 +6,7 @@
   <link href="https://www.noahxever.top/atom.xml" rel="self"/>
   
   <link href="https://www.noahxever.top/"/>
-  <updated>2024-05-27T14:47:58.706Z</updated>
+  <updated>2024-05-27T14:50:24.172Z</updated>
   <id>https://www.noahxever.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>POW&amp;RSA&amp;最小区块链</title>
+    <link href="https://www.noahxever.top/2024/05/27/POW-RSA-%E6%9C%80%E5%B0%8F%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <id>https://www.noahxever.top/2024/05/27/POW-RSA-%E6%9C%80%E5%B0%8F%E5%8C%BA%E5%9D%97%E9%93%BE/</id>
+    <published>2024-05-27T14:49:24.000Z</published>
+    <updated>2024-05-27T14:50:24.172Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="POW-RSA-最小区块链"><a href="#POW-RSA-最小区块链" class="headerlink" title="POW&amp;RSA&amp;最小区块链"></a>POW&amp;RSA&amp;最小区块链</h1><!-- START doctoc generated TOC please keep comment here to allow auto update --><!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --><h2 id="区块链价值"><a href="#区块链价值" class="headerlink" title="区块链价值"></a>区块链价值</h2><ul><li><a href="#%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BB%B7%E5%80%BC">区块链价值</a></li><li><a href="#pow">POW</a></li><li><a href="#%E7%9F%BF%E5%B7%A5">矿工</a></li><li><a href="#rsa">RSA</a></li><li><a href="#%E6%9C%80%E5%B0%8F%E5%8C%BA%E5%9D%97%E9%93%BE">最小区块链</a></li></ul><!-- END doctoc generated TOC please keep comment here to allow auto update --><h2 id="区块链价值-1"><a href="#区块链价值-1" class="headerlink" title="区块链价值"></a>区块链价值</h2><ul><li>基于人的信任  → 对代码的信任</li></ul><h2 id="POW"><a href="#POW" class="headerlink" title="POW"></a>POW</h2><h2 id="矿工"><a href="#矿工" class="headerlink" title="矿工"></a>矿工</h2><ul><li><code>Hash(上一个 Hash 值, 交易记录集) → 哈希值</code><ul><li>增加难度, 解密码学难题: <code>Hash(上一个 Hash 值, 交易记录集, 随机数) → 哈希值</code></li></ul></li><li>计算当前节点的哈希值</li><li>第一个计算出来(最高区块高度), 会广播到所有其他的矿工, 然后所有的矿工都将计算出来的同步过来, 并开始计算下一个区块的哈希值</li></ul><h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><ul><li>生成 KeyPair</li><li>私钥进行签名, 公钥进行验证</li></ul><h2 id="最小区块链"><a href="#最小区块链" class="headerlink" title="最小区块链"></a>最小区块链</h2><ul><li>创世块</li><li>transaction</li><li>mine</li><li>consensus</li><li>resolve-conflict</li><li>chain</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;POW-RSA-最小区块链&quot;&gt;&lt;a href=&quot;#POW-RSA-最小区块链&quot; class=&quot;headerlink&quot; title=&quot;POW&amp;amp;RSA&amp;amp;最小区块链&quot;&gt;&lt;/a&gt;POW&amp;amp;RSA&amp;amp;最小区块链&lt;/h1&gt;&lt;!-- START do</summary>
+      
+    
+    
+    
+    <category term="Blockchain" scheme="https://www.noahxever.top/categories/Blockchain/"/>
+    
+    
+    <category term="Sui" scheme="https://www.noahxever.top/tags/Sui/"/>
+    
+  </entry>
   
   <entry>
     <title>Solidity Basic</title>
