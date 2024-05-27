@@ -2,27 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.noahxever.top/2024/03/14/Move-on-Sui-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
-    
-    <lastmod>2024-03-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.noahxever.top/2024/03/13/Move-%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</loc>
-    
-    <lastmod>2024-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.noahxever.top/2024/03/12/Sui-%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
     
-    <lastmod>2024-03-12</lastmod>
+    <lastmod>2024-05-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +13,34 @@
   <url>
     <loc>https://www.noahxever.top/2024/03/12/Sui-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/</loc>
     
-    <lastmod>2024-03-12</lastmod>
+    <lastmod>2024-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.noahxever.top/2024/05/27/Solidity-Basic/</loc>
+    
+    <lastmod>2024-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.noahxever.top/2024/03/14/Move-on-Sui-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</loc>
+    
+    <lastmod>2024-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.noahxever.top/2024/03/13/Move-%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2024-05-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -199,6 +208,13 @@
   
   <url>
     <loc>https://www.noahxever.top/tags/static-site/</loc>
+    <lastmod>2024-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.noahxever.top/tags/Ethereum/</loc>
     <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
